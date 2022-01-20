@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pagina principal</title>
+</head>
+<body>
+	<!-- Mostrando variable -->
+	<h1 th:text="${mensaje}"></h1>
+	<p>Hoy es [[${fecha}]]</p>
+	
+	<h2>Usuario: th:text</h2>
+	<p th:text="'Nombre: ' + ${nombre}"></p>
+	<p th:text="'Edad: ' + ${edad}"></p>
+	<p th:text="'Sueldo: ' + ${sueldo}"></p>
+	<p th:text="'Es casado?: ' + ${esCasado? 'Si' : 'No'}"></p>
+	
+	<h2>Frutas 1: th:each</h2>
+	<ul th:each="fruta: ${frutas}">
+		<li th:text="${fruta}"></li>
+	</ul>
+	
+	<h2>Frutas 2: th:each</h2>
+	<ol>
+		<li th:each="fruta: ${frutas}" th:text="${fruta}"></li>
+	</ol>
+</body>
+</html>
+
+
